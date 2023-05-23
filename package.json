@@ -1,0 +1,20 @@
+{
+  "name": "habit-tracker",
+  "version": "1.0.0",
+  "description": "My skill test project",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch assets/scss:assets/css"
+  },
+  "keywords": [
+    "Habit-tracker"
+  ],
+  "author": "kapil",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2"
+  }
+}
