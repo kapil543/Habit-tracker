@@ -16,7 +16,14 @@ main div {
   display: grid;
 }
 
-.fas {
+.home{
+  color: white;
+  font-size: x-large;
+  margin: 5px;
+  position: fixed;
+}
+
+.fas{
   color: white;
   font-size: x-large;
   margin: 5px;

@@ -17,8 +17,7 @@
     function SetMinMaxDateOnDatePicker() {
         currentDate = moment().format('YYYY-MM-DD');
         sixtyDaysBefore = moment(currentDate).subtract(60, 'days').format('YYYY-MM-DD');
-        // console.log(sixtyDaysBefore);
-        startDate.setAttribute("max", currentDate)
+        startDate.setAttribute("max", currentDate);
         endDate.setAttribute("max", currentDate);
         startDate.setAttribute("min", sixtyDaysBefore)
         endDate.setAttribute("min", sixtyDaysBefore);
@@ -27,6 +26,7 @@
     }
 
     // call function to fix min max values
+     
     SetMinMaxDateOnDatePicker();
 
 
@@ -125,11 +125,17 @@
     filterBtn.onclick = function () {
         let startDateMoment = moment(startDate.value);
         let endDateMoment = moment(endDate.value);
+        let  Date = moment(currentDate) ;
         let days = endDateMoment.diff(startDateMoment, 'days');
         if (days < 0) {
             alert("Start date cannot be greater than end date");
             return;
         }
+        let isValid =  Date.diff(endDateMoment, "days");
+          if ( isValid < 0) {
+            alert("End date cannot be greater than current date");
+            return;
+          }
         daysList.innerHTML = "";
         renderOnLoad(days, endDateMoment);
     }
@@ -138,3 +144,4 @@
     renderOnLoad(6, currentDate);
 
 })();
+ 

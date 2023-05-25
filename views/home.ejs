@@ -4,7 +4,7 @@
 <!-- Form For Taking Habit List -->
 <div>
     <form class="habit-form" action="/add-habit" method="POST">
-        <input type="text" name="habit_name" class="habit-details-input" placeholder="Enter Habit You Want To Create" required>
+        <input type="text" name="habit_name" class="habit-details-input" placeholder="  Create Habit" required>
         <button class="button" type="submit"><i class="fas fa-plus"></i></button>
     </form>
 </div>
@@ -12,11 +12,11 @@
 <!-- Rendering habits -->
 <div class="render-habits">
     <ul class="list-item">
-        <% for (const it of habit_list){ %>
-        <li onclick="location.href='/view-habit/?id=<%=it._id%>'" >
-            <div class="habit"> <i class="fas fa-smile-beam"></i> <%=it.habit_name%></div>
+        <% for (const item of habit_list){ %>
+        <li onclick="location.href='/view-habit/?id=<%=item._id%>'" >
+            <div class="habit"> <i class="fas fa-smile-beam"></i> <%=item.habit_name%></div>
             <div class="delete">
-                <a href="/delete-habit/?id=<%=it._id%>">
+                <a href="/delete-habit/?id=<%=item._id%>">
                     <i class="fas fa-times"></i>
                 </a>
             </div>
